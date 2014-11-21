@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">Fooi Calculator</string>
+    <string name="action_settings">Settings</string>
+    <string name="fooi_percentage_label">Procent</string>
+    <string name="rekeningBedragLabel">Rekening Bedrag</string>
+    <string name="FooiString">Fooi</string>
+    <string name="TotaalBedrag">Totaal</string>
+    <string name="plus">+</string>
+    <string name="min">-</string>
+
+
+</resources>
