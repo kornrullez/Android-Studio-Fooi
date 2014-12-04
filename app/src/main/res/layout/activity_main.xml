@@ -1,102 +1,132 @@
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
+<TableLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:paddingTop="@dimen/activity_vertical_margin"
-    android:paddingBottom="@dimen/activity_vertical_margin"
-    tools:context=".MainActivity">
+    android:padding="10dp">
 
-    <TextView
+    <TableRow>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/rekeningBedragLabel"
+            android:textSize="20sp" />
+
+        <EditText
+            android:id="@+id/rekeningBedragEditText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:layout_span="3"
+            android:ems="8"
+            android:inputType="numberDecimal"
+            android:textSize="20sp">
+
+            <requestFocus />
+        </EditText>
+    </TableRow>
+
+
+    <TableRow>
+
+        <TextView
+            android:id="@+id/procentLabel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="50dp"
+            android:text="@string/fooi_percentage_label"
+            android:textSize="20sp" />
+
+        <TextView
+            android:id="@+id/ProcentView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="55dp"
+            android:text="@string/proccent"
+            android:textAppearance="?android:attr/textAppearanceMedium"
+            android:textSize="25dp" />
+
+        <Button
+            android:id="@+id/procent_PlusButton"
+            style="?android:attr/buttonStyleSmall"
+            android:layout_width="45dp"
+            android:layout_height="45dp"
+            android:layout_marginTop="55dp"
+            android:text="@string/plus" />
+
+        <Button
+            android:id="@+id/procent_MinButton"
+            style="?android:attr/buttonStyleSmall"
+            android:layout_width="45dp"
+            android:layout_height="45dp"
+            android:layout_marginTop="55dp"
+            android:text="@string/min" />
+
+    </TableRow>
+
+    <TableRow>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="50dp"
+            android:text="@string/FooiString"
+            android:textSize="20sp" />
+
+        <TextView
+            android:id="@+id/ProcentTotaal"
+            android:layout_width="wrap_content"
+
+            android:layout_height="wrap_content"
+            android:layout_marginTop="50dp"
+            android:text="@string/€"
+            android:textSize="20sp" />
+
+    </TableRow>
+
+    <TableRow>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="50dp"
+            android:text="@string/TotaalBedrag"
+            android:textSize="20sp" />
+
+        <TextView
+            android:id="@+id/Totaal"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="50dp"
+            android:text="@string/€"
+            android:textSize="20sp" />
+    </TableRow>
+<TableRow>
+    <RadioGroup
+        android:id="@+id/radiogroep"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:textSize="20sp"
-        android:layout_marginTop="10dp"
-        android:layout_marginLeft="5dp"
-        android:text="@string/rekeningBedragLabel"
-        android:layout_alignParentTop="true"
-        android:layout_alignParentStart="true" />
-    <EditText
-        android:id="@+id/rekeningBedragEditText"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="5dp"
-        android:layout_marginLeft="200dp"
-        android:ems="8"
-        android:inputType="numberDecimal"
-        android:textSize="20sp" >
+        android:layout_below="@+id/scheidslijn"
+        android:layout_toRightOf="@+id/afrondLabel"
+        android:layout_alignLeft="@id/totaalTextView">
 
-        <requestFocus />
-    </EditText>
+        <RadioButton
+            android:id="@+id/optie1RadioButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:checked="true"
+            android:text="@string/tekst_optie_1" />
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:id="@+id/procentLabel"
-        android:layout_marginLeft="5dp"
-        android:layout_marginTop="55dp"
-        android:text="@string/fooi_percentage_label"
-        android:textSize="20sp" />
+        <RadioButton
+            android:id="@+id/optie2RadioButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/tekst_optie_2" />
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="55dp"
-        android:layout_marginLeft="150dp"
-        android:textAppearance="?android:attr/textAppearanceMedium"
-        android:id="@+id/ProcentView"
-        android:text="%"
-      />
-
-    <Button
-
-        style="?android:attr/buttonStyleSmall"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-
-        android:layout_marginTop="40dp"
-        android:layout_marginLeft="300dp"
-        android:id="@+id/procent_PlusButton"
-        android:text="@string/plus"/>
-
-    <Button
-        style="?android:attr/buttonStyleSmall"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="40dp"
-        android:layout_marginLeft="250dp"
-        android:id="@+id/procent_MinButton"
-        android:text="@string/min"/>
-     />
-
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="100dp"
-        android:textSize="20sp"
-        android:layout_marginLeft="5dp"
-        android:text="@string/FooiString"/>
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="€"
-        android:layout_marginLeft="150dp"
-        android:layout_marginTop="100dp"
-        android:textSize="20sp"
-        android:id="@+id/ProcentTotaal"/>
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="150dp"
-        android:layout_marginLeft="5dp"
-        android:textSize="20sp"
-        android:text="@string/TotaalBedrag"/>
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="€"
-        android:layout_marginTop="150dp"
-        android:layout_marginLeft="150dp"
-        android:textSize="20sp"
-        android:id="@+id/Totaal"/>
-
-</RelativeLayout>
+        <RadioButton
+            android:id="@+id/optie3RadioButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/tekst_optie_3" />
+    </RadioGroup>
+    </TableRow>
+</TableLayout>

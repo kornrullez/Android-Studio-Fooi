@@ -4,12 +4,11 @@ import android.app.Activity;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.KeyEvent;
-import android.view.Menu;
-import android.view.MenuItem;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.RadioButton;
 import android.widget.TextView;
 import android.view.inputmethod.EditorInfo;
 import android.widget.TextView.OnEditorActionListener;
@@ -17,7 +16,7 @@ import android.widget.TextView.OnEditorActionListener;
 import java.text.DecimalFormat;
 
 
-public class MainActivity extends Activity implements OnEditorActionListener, OnClickListener{
+public class MainActivity extends Activity implements OnEditorActionListener, OnClickListener {
     private EditText rekeningBedragEditText;
     private TextView procentTextView;
     private Button procentPlusButton;
@@ -26,6 +25,9 @@ public class MainActivity extends Activity implements OnEditorActionListener, On
     private TextView totaalTextView;
     private double fooiPercentage = 15.0;
     private SharedPreferences bewaardeWaardes;
+    private RadioButton radioBoptie1;
+    private RadioButton radioBoptie2;
+    private RadioButton radioBoptie3;
 
     private String rekeningBedragString = "";
     private int fooiPercentageInt;
@@ -42,6 +44,9 @@ public class MainActivity extends Activity implements OnEditorActionListener, On
         procentMinButton = (Button) findViewById(R.id.procent_MinButton);
         fooiTextView = (TextView) findViewById(R.id.ProcentTotaal);
         totaalTextView = (TextView) findViewById(R.id.Totaal);
+        radioBoptie1  =(RadioButton) findViewById(R.id.optie1RadioButton);
+        radioBoptie2 = (RadioButton) findViewById(R.id.optie2RadioButton);
+        radioBoptie3 = (RadioButton) findViewById(R.id.optie3RadioButton);
 
         rekeningBedragEditText.setOnEditorActionListener(this);
         procentMinButton.setOnClickListener(this);
@@ -49,12 +54,19 @@ public class MainActivity extends Activity implements OnEditorActionListener, On
 
     }
 
+    void setChecked()
+    radioBoption1.setChecked(true);
+
+boolean isChecked()
+    if (optie2RadioButton.isChecked) {
+        //Doe iets
+    }
     @Override
     public void onPause() {
         // bewaar de variabelen
         SharedPreferences.Editor editor = bewaardeWaardes.edit();
         editor.putString("rekeningBedragString", rekeningBedragString);
-        fooiPercentageInt = (int)fooiPercentage;
+        fooiPercentageInt = (int) fooiPercentage;
         editor.putInt("fooiPercentage", fooiPercentageInt);
         editor.commit();
 
@@ -105,23 +117,23 @@ public class MainActivity extends Activity implements OnEditorActionListener, On
     private void berekenEnToon() {
         String rekeningBedragS = rekeningBedragEditText.getText().toString();
         double rekeningBedrag;
-        if (rekeningBedragS.equals("")){
+        if (rekeningBedragS.equals("")) {
             rekeningBedrag = 0.0;
-        }
-        else{
-           rekeningBedrag = Double.parseDouble(rekeningBedragS);
+        } else {
+            rekeningBedrag = Double.parseDouble(rekeningBedragS);
         }
 
         //Bereken fooi en totaal//
 
-        double fooibedrag = rekeningBedrag * (fooiPercentage/100);
+        double fooibedrag = rekeningBedrag * (fooiPercentage / 100);
         double totaalbedrag = rekeningBedrag + fooibedrag;
 
         DecimalFormat df = new DecimalFormat("€ ###,###.00");
         fooiTextView.setText(df.format(fooibedrag));
         totaalTextView.setText(df.format(totaalbedrag));
         procentTextView.setText("" + (int) fooiPercentage + "%");
-        }
+    }
+
 
 
 }

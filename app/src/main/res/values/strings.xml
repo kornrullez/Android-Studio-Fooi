@@ -9,6 +9,9 @@
     <string name="TotaalBedrag">Totaal</string>
     <string name="plus">+</string>
     <string name="min">-</string>
-
-
+    <string name="€">€</string>
+    <string name="proccent">15%</string>
+    <string name="tekst_optie_1">tekst opties 1</string>
+    <string name="tekst_optie_2">tekst opties 2</string>
+    <string name="tekst_optie_3">tekst opties 3</string>
 </resources>
