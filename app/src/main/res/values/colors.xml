@@ -1,4 +1,4 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <item name="totaalTextView" type="id">Optie1</item>
+    <color name="mpurple">#3F51B5</color>
 </resources>

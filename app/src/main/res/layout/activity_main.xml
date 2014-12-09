@@ -1,14 +1,17 @@
+
 <TableLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:padding="10dp">
+    android:padding="10dp"
+    android:background="@drawable/material"
+    >
 
     <TableRow>
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/rekeningBedragLabel"
+            android:text="Rekening bedrag"
             android:textSize="20sp" />
 
         <EditText
@@ -33,7 +36,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="50dp"
-            android:text="@string/fooi_percentage_label"
+            android:text="Procent"
             android:textSize="20sp" />
 
         <TextView
@@ -41,35 +44,27 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="55dp"
-            android:text="@string/proccent"
+            android:text="%"
             android:textAppearance="?android:attr/textAppearanceMedium"
             android:textSize="25dp" />
 
-        <Button
-            android:id="@+id/procent_PlusButton"
-            style="?android:attr/buttonStyleSmall"
-            android:layout_width="45dp"
-            android:layout_height="45dp"
-            android:layout_marginTop="55dp"
-            android:text="@string/plus" />
-
-        <Button
-            android:id="@+id/procent_MinButton"
-            style="?android:attr/buttonStyleSmall"
-            android:layout_width="45dp"
-            android:layout_height="45dp"
-            android:layout_marginTop="55dp"
-            android:text="@string/min" />
-
     </TableRow>
-
+<TableRow>
+    <SeekBar
+        android:id="@+id/procentSeekBar"
+        android:layout_width="150dp"
+        android:layout_marginLeft="50dp"
+        android:layout_height="wrap_content"
+        android:max="100"
+        android:progress="36" />
+</TableRow>
     <TableRow>
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="50dp"
-            android:text="@string/FooiString"
+            android:text="Fooi"
             android:textSize="20sp" />
 
         <TextView
@@ -78,18 +73,17 @@
 
             android:layout_height="wrap_content"
             android:layout_marginTop="50dp"
-            android:text="@string/€"
+            android:text="€"
             android:textSize="20sp" />
 
     </TableRow>
-
     <TableRow>
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="50dp"
-            android:text="@string/TotaalBedrag"
+            android:text="Totaal"
             android:textSize="20sp" />
 
         <TextView
@@ -97,36 +91,64 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="50dp"
-            android:text="@string/€"
+            android:text="€"
             android:textSize="20sp" />
     </TableRow>
-<TableRow>
-    <RadioGroup
-        android:id="@+id/radiogroep"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/scheidslijn"
-        android:layout_toRightOf="@+id/afrondLabel"
-        android:layout_alignLeft="@id/totaalTextView">
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="2dp"
+        android:background="@color/mpurple"/>
+    <TableRow>
 
-        <RadioButton
-            android:id="@+id/optie1RadioButton"
+        <TextView
+            android:id="@+id/Afronden"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:checked="true"
-            android:text="@string/tekst_optie_1" />
-
-        <RadioButton
-            android:id="@+id/optie2RadioButton"
+            android:layout_marginTop="50dp"
+            android:text="Afronden"
+            android:textSize="20sp" />
+        <RadioGroup
+            android:id="@+id/radiogroep"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/tekst_optie_2" />
+            android:layout_below="@+id/scheidslijn"
+            android:layout_toRightOf="@+id/afrondLabel"
+            android:layout_alignLeft="@id/totaalTextView">
 
-        <RadioButton
-            android:id="@+id/optie3RadioButton"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/tekst_optie_3" />
-    </RadioGroup>
+            <RadioButton
+                android:id="@+id/optie1RadioButton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:checked="true"
+                android:text="Geen" />
+
+            <RadioButton
+                android:id="@+id/optie2RadioButton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Fooi" />
+
+            <RadioButton
+                android:id="@+id/optie3RadioButton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Totaal" />
+        </RadioGroup>
     </TableRow>
+    <TableRow>
+        <TextView
+            android:id="@+id/delen"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="50dp"
+            android:text="Delen"
+            android:textSize="20sp" />
+        <Spinner
+            android:id="@+id/delenSpinner"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+
+        </Spinner>
+    </TableRow>
+
 </TableLayout>

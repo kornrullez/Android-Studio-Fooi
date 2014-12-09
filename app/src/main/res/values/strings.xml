@@ -2,16 +2,20 @@
 <resources>
 
     <string name="app_name">Fooi Calculator</string>
+    <string name="hello_world">Hello world!</string>
     <string name="action_settings">Settings</string>
-    <string name="fooi_percentage_label">Procent</string>
     <string name="rekeningBedragLabel">Rekening Bedrag</string>
-    <string name="FooiString">Fooi</string>
-    <string name="TotaalBedrag">Totaal</string>
-    <string name="plus">+</string>
-    <string name="min">-</string>
-    <string name="€">€</string>
-    <string name="proccent">15%</string>
-    <string name="tekst_optie_1">tekst opties 1</string>
-    <string name="tekst_optie_2">tekst opties 2</string>
-    <string name="tekst_optie_3">tekst opties 3</string>
+    <string name="fooi_percentage_label">Procent</string>
+    <string name="Optie1">Optie1</string>
+    <string name="Optie2">Optie2</string>
+    <string name="Optie3">Optie3</string>
+    <string name="menu_settings" />
+    <string name="title_activity_main" />
+    <string-array name="spinner_array">
+        <item >optie 1</item>
+        <item >optie 2</item>
+        <item >optie 3</item>
+        <item >optie 4</item>
+    </string-array>
+
 </resources>

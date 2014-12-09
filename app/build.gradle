@@ -1,21 +1,18 @@
 apply plugin: 'com.android.application'
 
 android {
-    compileSdkVersion 19
+    compileSdkVersion 21
     buildToolsVersion "21.1.0"
 
     defaultConfig {
-        applicationId "com.example.kevinlutgert.fooi"
-        minSdkVersion 19
-        targetSdkVersion 19
+        applicationId "com.example.kevinlutgert.materialdesign"
+        minSdkVersion 21
+        targetSdkVersion 21
         versionCode 1
         versionName "1.0"
     }
     buildTypes {
-        release {
-            runProguard false
-            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
-        }
+
     }
 }
 

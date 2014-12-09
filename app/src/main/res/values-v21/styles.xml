@@ -1,5 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <style name="AppTheme" parent="android:Theme.Holo.Light.DarkActionBar">
+    <style name="AppTheme" parent="android:Theme.Material">
+        <item name="android:colorPrimary">#3F51B5</item>
+        <item name="android:colorPrimaryDark">#283593</item>
+        <item name="android:textColorPrimary">#FFFFFF</item>
+<item name="android:textColor">#FFFFFF</item>
     </style>
 </resources>
